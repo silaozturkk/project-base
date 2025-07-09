@@ -1,3 +1,10 @@
+if(process.env.NODE_ENV != "production")
+  require('dotenv').config();
+
+require('dotenv').config()
+// dotenv kütüphanesinin .env dosyasına yazılanları al
+// procces.env e ata demis oluyoruz.
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -8,6 +15,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+console.log("ENV", process.env);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
